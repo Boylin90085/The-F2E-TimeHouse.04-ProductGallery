@@ -1,0 +1,450 @@
+$color_green: #50E3C2
+$color_black_1: rgba(0,0,0,0.3)
+$color_black_2: rgba(0,0,0,0.1)
+// --------
+$fz_1: 72px
+$fz_2: 48px
+$fz_3: 24px
+$fz_4: 20px
+$fz_5: 16px
+
+*
+  box-sizing: border-box
+  font-family: 'Roboto', sans-serif
+
+  // border: 1px solid black
+
+
+html,body
+  width: 100%
+  height: auto
+  margin: 0
+  padding: 0
+
+h1,h2,h3,p
+  margin: 0
+  padding: 0
+
+body
+  display: flex
+  justify-content: center
+
+.product-home-box, .product-box
+  box-sizing: content-box
+  padding: 32px
+  width: 960px
+  height: auto
+  display: grid
+  grid-template-columns: repeat(8, 120px)
+  grid-template-rows: repeat(20, 100px)
+
+.product-home-box
+  .title-box
+    grid-column-start: 3
+    grid-column-end: 7
+    display: flex
+    flex-direction: column
+    align-items: center
+    .title-head
+      font-size: 20px
+      background-color: black
+      color: white
+      font-weight: 900
+      padding: 0px 10px
+    .title
+      h1
+        font-size: 72px
+        font-weight: 900
+        margin: 0
+
+.product-item
+  background-position: center center
+  background-size: cover
+  display: grid
+  grid-auto-columns: 120px
+  grid-auto-rows: 100px
+  .img-box
+    background-position: center center
+    background-size: cover
+  .product-name
+    position: relative
+    font-size: 48px
+    font-weight: 900
+    &:before ,&:after
+      content: 'LINEN BLAZER'
+      position: absolute
+      padding: 0
+    &:before
+      top: -16px
+      height: 27px
+      overflow: hidden
+      color: $color_black_1
+    &:after
+      top: -25px
+      left: 0
+      height: 20px
+      overflow: hidden
+      color: $color_black_2
+  .subtitle
+    font-size: $fz_3
+    font-style: italic
+    font-weight: 700
+    transform-origin: left bottom
+  .number
+    font-size: $fz_2
+    font-weight: 900
+    grid-row: 5
+  .border-box
+    grid-column: span 2
+    grid-row: span 2
+    border: 20px solid $color_green
+    z-index: -1
+  .linear
+    grid-column: span 2
+    background: linear-gradient(-45deg, $color_green 10%, transparent 10%, transparent 30%, $color_green 30%, $color_green 60%, transparent 60%, transparent 80%, $color_green 80%)
+    background-size: 49px 49px
+    // background-repeat: no-repeat
+  .shadow-box
+    grid-column: span 2
+    grid-row: span 2
+    background-color: $color_green
+    z-index: -1
+.item1,.item2,.item3,.item4,.item5,.item6,.item7
+  cursor: pointer
+.item1
+  grid-column: 1 / 5
+  grid-row: 3 / 7
+  background-image: url(https://images.unsplash.com/photo-1513827379601-9dba5099a3f9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjF9&s=9b19616e232bd3897c5033df23102c6e&auto=format&fit=crop&w=634&q=80)
+
+  .product-name
+    grid-column: 1 / 4
+    grid-row: 1
+    margin: 0
+    transform: translate(1px, -20px)
+    &:before ,&:after
+      content: 'LINEN BLAZER'
+  .subtitle
+    grid-column: 3 / span 2
+    grid-row: 4
+    font-size: $fz_3
+    font-style: italic
+    font-weight: 700
+    transform-origin: left bottom
+    transform: translate(240px, -100px) rotate(90deg)
+    display: flex
+    align-items: flex-end
+  .border-box
+    grid-column: 4 / span 2
+    grid-row: 1 / span 2
+    transform: translate(-60px, -50px)
+  .linear
+    grid-column: 2 / span 2
+    grid-row: 4
+    transform: translate(-60px, 50px)
+
+.item2
+  grid-column: 6 / 8
+  grid-row: 4 / 6
+  background-image: url(https://images.unsplash.com/photo-1514632542677-48fae74a01b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cf412aceb1d689765e387d30fca7210a&auto=format&fit=crop&w=634&q=80)
+  box-shadow: 60px -50px $color_green
+  .product-name
+    grid-column: 2 / span 2
+    grid-row: 3
+    transform: translateY(15px)
+    &:before, &:after
+      content: 'FREELIFT'
+  .subtitle
+    grid-column: 1 / span 2
+    grid-row: 1
+    transform: translate(-15px, -28px)
+  .number
+    display: flex
+    justify-content: flex-end
+    grid-column: 3
+    grid-row: 1
+    transform: translateY(-107px)
+  .border-box
+    grid-column: 2 / 4
+    grid-row: 1 / 3
+    transform: translateY(-100px)
+    
+
+.item3
+  grid-column: 1 / 5
+  grid-row: 9 / 11
+  background-image: url(https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0f994eef47e5fb1a67849703cc961b3&auto=format&fit=crop&w=1350&q=80)
+  .product-name
+    grid-column: 2 / span 3
+    grid-row: 1
+    transform: translateY(-55px)
+    display: flex
+    justify-content: flex-end
+    &:before, &:after
+      content: 'SUPER SKINNY'
+    &:after
+      left: auto
+  .subtitle
+    grid-column: 1 / span 2
+    grid-row: 3
+    display: flex
+    justify-content: flex-end
+  .number
+    grid-column: 5
+    grid-row: 3
+    transform: translateY(-6px)
+  .border-box
+    grid-column: 3 / span 2
+    grid-row: 1 / span 2
+    transform: translate(60px, 50px)
+  .shadow-box
+    grid-column: 1 / span 2
+    grid-row: 1 / span 2
+    transform: translateY(-50px)
+
+
+.item4
+  grid-column: 7 / 9
+  grid-row: 9 / 13
+  background-image: url(https://images.unsplash.com/photo-1484516758160-69878111a911?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39466d66952b133d5a5cff642b970d05&auto=format&fit=crop&w=687&q=80)
+  .product-name
+    grid-column: 1 / span 2
+    grid-row: 1
+    transform-origin: left top
+    transform: rotate(-90deg) translate(-148px, -52px)
+    &:before, &:after
+      content: 'DENIM'
+  .subtitle
+    grid-column: 1 / span 2
+    grid-row: 1
+    display: flex
+    align-items: center
+    transform-origin: right top
+    transform: rotate(90deg) translate(94px, 5px)
+  .number
+    grid-column: 1
+    grid-row: 4
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+    transform: translateX(-120px)
+  .border-box
+    grid-column: 1 / span 2
+    grid-row: 1 / span 2
+    transform: translate(-57px, -100px)
+  .linear
+    grid-column: 1 / span 2
+    grid-row: 4
+    transform: translateY(50px)
+
+
+.item5
+  grid-column: 3 / 5
+  grid-row: 13 / 15
+  .img-box
+    grid-column: 1 / span 2
+    grid-row: 1 / span 2
+    // 水平翻轉
+    transform: scaleX(-1)
+    background-image: url(https://images.unsplash.com/photo-1525448198276-222de3961638?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43fb25556cdbd191e520c7f28739e40d&auto=format&fit=crop&w=1950&q=80)
+  .product-name
+    grid-column: 1 / span 2
+    grid-row: 1
+    transform: translate(-240px, 50px)
+    z-index: 1
+    &:before, &:after
+      content: 'SWEATSHIRTS'
+  .subtitle
+    grid-column: 3 / span 2
+    grid-row: 1
+  .number
+    grid-column: 1
+    grid-row: 2
+    display: flex
+    align-items: flex-end
+    transform: translateX(-120px)
+  .border-box
+    grid-column: 1 / span 2
+    grid-row: 2
+    transform: translate(-120px, 50%)
+  .linear
+    grid-column: 1 / span 2
+    grid-row: 1
+    transform: translate(-180px, -50%)
+
+
+.item6
+  grid-column: 5 / 9
+  grid-row: 15 / 19
+  background-image: url(https://images.unsplash.com/photo-1519406709381-c1f293304b28?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=98c497a29f229085d9574ee8b6eeef8c&auto=format&fit=crop&w=2134&q=80)
+  .product-name
+    grid-column: 2 / 6
+    grid-row: 1
+    transform: translate(0, -55px)
+    &:before, &:after
+      content: 'VINTAGE DENIM'
+  .subtitle
+    grid-column: 2 / 4
+    grid-row: 5
+    text-align: center
+  .number
+    grid-column: 1
+    grid-row: 2
+    transform: translateX(-120px)
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+  .border-box
+    grid-column: 1 / span 4
+    grid-row: 4
+    transform: translateY(50%)
+  .shadow-box
+    grid-column: 1
+    grid-row: 3 / span 2
+    transform: translateX(-50%)
+
+
+.item7
+  grid-column: 1 / 3
+  grid-row: 17 / 21
+  background-image: url(https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjF9&s=c3fe320bd592fb75fb54bf245817450d&auto=format&fit=crop&w=634&q=80)
+  .product-name
+    grid-column: 3 / span 2
+    grid-row: 1
+    transform-origin: left top
+    transform: rotate(90deg) translateY(-53px)
+    &:before, &:after
+      content: 'EDITION'
+  .subtitle
+    grid-column: 1 / span 2
+    grid-row: 1
+    display: flex
+    align-items: flex-end
+    transform: translateY(-100px)
+  .number
+    grid-column: 3
+    grid-row: 4
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+  .border-box
+    grid-column: 1 / span 2
+    grid-row: 1 / span 3
+    transform: translate(60px, -50px)
+  .shadow-box
+    grid-column: 3
+    grid-row: 3 / span 2
+
+
+
+.product-box
+  .title-box
+    grid-column: 2 / span 1
+    grid-row: 1
+    display: flex
+    align-items: center
+    margin-left: -30px
+    cursor: pointer
+    i
+      font-size: 25px
+      margin-right: 8px
+    .title-head
+      font-size: 20px
+      background-color: black
+      color: white
+      font-weight: 900
+      padding: 0px 10px
+
+  .item-banner
+    grid-column: 2 / 8
+    grid-row: 3 / 7
+    background-image: url(https://images.unsplash.com/photo-1519406709381-c1f293304b28?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=98c497a29f229085d9574ee8b6eeef8c&auto=format&fit=crop&w=2134&q=80)
+    .product-title
+      font-size: $fz_2
+    .part1
+      grid-column: 5 / span 2
+      grid-row: 1
+      display: flex
+      justify-content: flex-end
+      align-items: flex-end
+      transform: translateY(-95px)
+    .part2
+      grid-column: 7 / span 2
+      grid-row: 1
+      transform-origin: left top
+      transform: rotate(90deg) translateY(-95px)
+      display: flex
+      align-items: flex-end
+    .part3
+      grid-column: 1
+      grid-row: 4
+      display: flex
+      align-items: flex-end
+      justify-content: flex-end
+      transform-origin: bottom bottom
+      transform: rotate(180deg) translateY(-95px)
+    .part4
+      grid-column: 1
+      grid-row: 4
+      display: flex
+      align-items: flex-end
+      transform-origin: left bottom
+      transform: rotate(270deg) translateY(5px)
+    .border-box
+      grid-column: 3 / span 4
+      grid-row: 3 / span 2
+      transform: translate(60px, 50px)
+    .shadow-box
+      grid-column: 1 / span 2
+      grid-row: 1 / span 2
+      transform: translate(-60px, -50px)
+
+  .text-content
+    grid-column: 2 / 8
+    grid-row: 9 / 13
+    .content-title
+      grid-column: 2 / span 4
+      grid-row: 1
+      h2
+        font-size: $fz_2
+        transform: translateY(-10px)
+        font-weight: 900
+      h3
+        font-size: $fz_3
+        transform: translateY(-10px)
+        font-weight: 900
+    .subtitle
+      grid-column: 1 / span 2
+      grid-row: 1
+      display: flex
+      align-items: flex-end
+      transform-origin: left top
+      transform: rotate(90deg) translateY(-100px)
+    .content
+      grid-column: 2 / 7
+      grid-row: 2 / 5
+      line-height: 24px
+      font-size: $fz_5
+
+  .show-pic
+    grid-column: 4 / span 4
+    grid-row: 16 /  span 4
+    background-image: url(https://images.unsplash.com/photo-1519406728390-b536d7be138f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=787976dcde91781727f476692b203ee9&auto=format&fit=crop&w=634&q=80)
+    .pic-box
+      grid-column: 1 / span 3
+      grid-row: 1 / span 3
+      transform: translate(-240px, -200px)
+      background-image: url(https://images.unsplash.com/photo-1519406686401-e9ef2420c15b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f48976340279ffce098f21bb046acc87&auto=format&fit=crop&w=1350&q=80)
+      background-position: center center
+      background-size: cover
+    .border-box
+      grid-column: 1 / span 4
+      grid-row: 1 / span 2
+      transform: translate(-300px,-50px)
+    .shadow-box
+      grid-column: 3 / span 2
+      grid-row: 1 / span 2
+      transform: translate(60px,-100px)
+    .linear
+      grid-column: 1 / span 2
+      grid-row: 4
+      transform: translate(-180px,50px)
